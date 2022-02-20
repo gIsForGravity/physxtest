@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "graphx.h": "c",
+        "gfx.h": "c",
+        "global_palette.h": "c",
+        "debug.h": "c"
+    }
+}

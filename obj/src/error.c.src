@@ -1,0 +1,195 @@
+	section	.text,"ax",@progbits
+	assume	adl = 1
+	section	.text,"ax",@progbits
+	public	_err_fatalcrash
+_err_fatalcrash:
+	private	func_begin0
+func_begin0:
+	file	0 "C:\games\CEdev\projects\physxtest" "src\error.c" md5 0x68a5a693d632edebfef6dedea9cb7c0b
+	file	1 "C:/games/CEdev/projects/physxtest/src" "error.c" md5 0x68a5a693d632edebfef6dedea9cb7c0b
+	loc	1 12 0
+	cfi_sections .debug_frame
+	cfi_startproc
+	loc	1 13 5 prologue_end
+	call	_gfx_End
+	private	tmp0
+tmp0:
+	loc	1 14 5
+	call	_abort
+	private	tmp1
+tmp1:
+	section	.text,"ax",@progbits
+	private	func_end0
+func_end0:
+	cfi_endproc
+	file	2 "C:\games\CEdev" "include\graphx.h" md5 0x9182ed22f00c123d838469e0bb01c04e
+
+	section	.debug_abbrev,"",@progbits
+	private	abbrev_start3
+abbrev_start3:
+	db	1
+	db	17
+	db	1
+	db	37
+	db	37
+	db	19
+	db	5
+	db	3
+	db	37
+	db	114
+	db	23
+	db	16
+	db	23
+	db	27
+	db	37
+	db	17
+	db	27
+	db	18
+	db	6
+	db	115
+	db	23
+	db	0
+	db	0
+	db	2
+	db	46
+	db	1
+	db	17
+	db	27
+	db	18
+	db	6
+	db	64
+	db	24
+	db	122
+	db	25
+	db	3
+	db	37
+	db	58
+	db	11
+	db	59
+	db	11
+	db	39
+	db	25
+	db	63
+	db	25
+	db	0
+	db	0
+	db	3
+	db	72
+	db	0
+	db	127
+	db	19
+	db	125
+	db	27
+	db	0
+	db	0
+	db	4
+	db	46
+	db	0
+	db	3
+	db	37
+	db	58
+	db	11
+	db	59
+	db	5
+	db	39
+	db	25
+	db	60
+	db	25
+	db	63
+	db	25
+	db	0
+	db	0
+	db	0
+	section	.debug_info,"",@progbits
+	private	cu_begin0
+cu_begin0:
+	dd	debug_info_end0-debug_info_start0
+	private	debug_info_start0
+debug_info_start0:
+	dw	5
+	db	1
+	db	3
+	dd	abbrev_start3
+	db	1
+	db	0
+	dw	12
+	db	1
+	dd	str_offsets_base0
+	dd	line_table_start0
+	db	2
+	db	0
+	dd	func_end0-func_begin0
+	dd	addr_table_base0
+	db	2
+	db	0
+	dd	func_end0-func_begin0
+	db	1
+	db	87
+
+	db	4
+	db	1
+	db	12
+
+
+	db	3
+	dd	53
+	db	1
+	db	0
+	db	4
+	db	3
+	db	2
+	dw	304
+
+
+
+	db	0
+	private	debug_info_end0
+debug_info_end0:
+	section	.debug_str_offsets,"",@progbits
+	dd	24
+	dw	5
+	dw	0
+	private	str_offsets_base0
+str_offsets_base0:
+	section	.debug_str,"MS",@progbits,1
+	private	info_string0
+info_string0:
+	db	"clang version 14.0.0 (https://github.com/jacobly0/llvm-project a139def90d26173f771eb1eca797633d1fbb2797)", 0
+	private	info_string1
+info_string1:
+	db	"src\error.c", 0
+	private	info_string2
+info_string2:
+	db	"C:\games\CEdev\projects\physxtest", 0
+	private	info_string3
+info_string3:
+	db	"gfx_End", 0
+	private	info_string4
+info_string4:
+	db	"err_fatalcrash", 0
+	section	.debug_str_offsets,"",@progbits
+	dd	info_string0
+	dd	info_string1
+	dd	info_string2
+	dd	info_string3
+	dd	info_string4
+	section	.debug_addr,"",@progbits
+	dd	debug_addr_end0-debug_addr_start0
+	private	debug_addr_start0
+debug_addr_start0:
+	dw	5
+	db	3
+	db	0
+	private	addr_table_base0
+addr_table_base0:
+	dl	func_begin0
+	dl	tmp0
+	private	debug_addr_end0
+debug_addr_end0:
+	ident	"clang version 14.0.0 (https://github.com/jacobly0/llvm-project a139def90d26173f771eb1eca797633d1fbb2797)"
+	section	.debug_line,"",@progbits
+line_table_start0:
+	extern	__Unwind_SjLj_Register
+	extern	__Unwind_SjLj_Unregister
+	extern	_abort
+	extern	_gfx_End

@@ -1,0 +1,21 @@
+palettes:
+  - name: palette
+    fixed-entries:
+      - color: {index: 0, r: 255, g: 0, b: 128}
+    images: automatic
+
+converts:
+  - name: sprites
+    palette: palette
+    transparent-color-index: 0
+    style: rlet
+    images:
+      - oiram
+
+outputs:
+  - type: c
+    include-file: gfx.h
+    palettes:
+      - palette
+    converts:
+      - sprites
