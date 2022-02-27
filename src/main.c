@@ -55,8 +55,7 @@ int main(void)
 
 void draw(void) {
     dbg_printf("fill screenn\n");
-    /*gfx_FillScreen(0x14);*/
-    gfx_FillScreen(0);
+    gfx_FillScreen(0x14);
 
     for (u8 i = 0; i < sizeof(idrawables) / sizeof(IDrawable*); i++) {
         dbg_printf("draw(): %i is %p\n", i, idrawables[i]);
