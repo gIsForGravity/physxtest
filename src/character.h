@@ -9,13 +9,14 @@
 #ifndef CHARACTER_H
 #define CHARACTER_H
 
-#ifdef __cplusplus
-extern "C" {
-#endif /* __cplusplus */
-
+/* Includes */
 #include "types/vec2.h"
 #include "types/basetypes.h"
 #include "types/IDrawable.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif /* __cplusplus */
 
 typedef struct Character {
     IDrawable to_IDrawable;

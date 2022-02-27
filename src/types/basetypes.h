@@ -9,11 +9,12 @@
 #ifndef TYPES_H
 #define TYPES_H
 
+/* Includes */
+#include <stdint.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-#include <stdint.h>
 
 typedef int8_t i8;
 typedef uint8_t u8;

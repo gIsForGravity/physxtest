@@ -9,11 +9,12 @@
 #ifndef VEC2_H
 #define VEC2_H
 
+/* Includes */
+#include "basetypes.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-#include "basetypes.h"
 
 typedef struct vector2 {
     float x, y;

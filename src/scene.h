@@ -9,12 +9,14 @@
 #ifndef SCENE_H
 #define SCENE_H
 
+/* Includes */
+#include <graphx.h>
+#include "types/basetypes.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif /* __cplusplus */
 
-#include <graphx.h>
-#include "types/basetypes.h"
 
 typedef struct scene {
     u8 bg_color;
