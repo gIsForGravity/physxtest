@@ -7,7 +7,7 @@ palettes:
 converts:
   - name: sprites
     palette: palette
-    transparent-color-index: 0
+    style: rlet
     images:
       - oiram
 

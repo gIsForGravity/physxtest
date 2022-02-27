@@ -14,19 +14,21 @@
 
 static vec2 camera_pos = {0, 0};
 
-void drw_DrawRLETCamera(const gfx_sprite_t* sprite, vec2 pos) {
+void drw_DrawRLETCamera(const gfx_rletsprite_t* sprite, vec2 pos) {
     dbg_printf("drw_DrawRLETCamera");
-    /*pos.y -= camera_pos.y;
+    pos.y -= camera_pos.y;
     pos.x -= camera_pos.x;
+
+    pos.x *= 100;
+    pos.y *= 100;
 
     pos.y *= -1;
     pos.y += 120;
     pos.x += 160;
 
-    pos.x *= 100;
-    pos.y *= 100;
+    dbg_printf("drw_DrawRLETCamera");
 
-    gfx_Sprite(sprite, (i24) pos.x, (i24) pos.y);*/
+    gfx_RLETSprite(sprite, (i24) pos.x, (i24) pos.y);
 }
 
 vec2 drw_GetCameraPos() {
