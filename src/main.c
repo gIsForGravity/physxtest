@@ -15,6 +15,7 @@
 #include "types/basetypes.h"
 #include "character.h"
 #include "error.h"
+#include "gfx/gfx.h"
 
 /* Function declarations */
 void begin(void);
@@ -28,8 +29,14 @@ static IDrawable *idrawables[16] = {NULL};
 /* vars */
 static Character p1 = {0};
 
+void testsballs(const gfx_sprite_t* test) {
+    return;
+}
+
 int main(void)
 {
+    dbg_printf("running testballs");
+    testsballs(oiram);
     dbg_printf("before begin\n");
     begin();
     for (u8 i = 0; i < sizeof(idrawables) / sizeof(IDrawable*); i++) {
@@ -81,7 +88,7 @@ bool step() {
 }
 
 void begin() {
-    p1 = chr_oiram;
+    chr_setcharacter_oiram(&p1);
 
     for (u8 i = 0; i < sizeof(idrawables) / sizeof(IDrawable*); i++) {
         if (NULL == idrawables[i]) {

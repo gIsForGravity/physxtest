@@ -1,140 +1,60 @@
 	section	.text,"ax",@progbits
 	assume	adl = 1
-	file	0 "C:\games\CEdev\projects\physxtest" "src\draw.c" md5 0xd9a6220276cbb08b26320875a75f807b
+	file	0 "C:\games\CEdev\projects\physxtest" "src\draw.c" md5 0x1fcd76e2e0f7398f2f43304760f5121c
 	file	1 "src/types" "vec2.h" md5 0xb3c9a5f73d69c4fd2a8743b5bc7a9028
-	file	2 "C:/games/CEdev/projects/physxtest/src" "draw.c" md5 0xd9a6220276cbb08b26320875a75f807b
-	file	3 "C:\games\CEdev" "include\stdint.h" md5 0xefb8540da62ce56ff575dd92d043acf8
-	file	4 "src/types" "basetypes.h" md5 0x929cfe7db14affe672f51e7197c17a57
+	file	2 "C:/games/CEdev/projects/physxtest/src" "draw.c" md5 0x1fcd76e2e0f7398f2f43304760f5121c
 	section	.text,"ax",@progbits
 	public	_drw_DrawRLETCamera
 _drw_DrawRLETCamera:
 	private	func_begin0
 func_begin0:
-	loc	2 16 0
+	loc	2 17 0
 	cfi_sections .debug_frame
 	cfi_startproc
-	ld	hl, -8
-	call	__frameset
+	call	__frameset0
 	private	tmp0
 tmp0:
 	cfi_def_cfa ix, 6
 	cfi_offset ix, -6
-	loc	2 17 25 prologue_end
-	ld	hl, (_camera_pos+4)
-	ld	(ix - 3), hl
-	ld	a, (_camera_pos+7)
-	ld	(ix - 4), a
-	loc	2 17 11 is_stmt 0
-	ld	iy, (ix + 13)
-	ld	d, (ix + 16)
-	loc	2 18 25 is_stmt 1
-	ld	hl, (_camera_pos)
-	ld	a, (_camera_pos+3)
-	ld	e, a
-	loc	2 18 11 is_stmt 0
-	ld	bc, (ix + 9)
-	ld	a, (ix + 12)
-	call	__fsub
+	ld	hl, -327680
 	private	tmp1
 tmp1:
-	ld	(ix - 7), bc
-	ld	(ix - 8), a
-	loc	2 21 11 is_stmt 1
-	ld	bc, (ix - 3)
-	ld	a, (ix - 4)
-	lea	hl, iy
-	ld	e, d
-	call	__fsub
+	loc	2 0 0 prologue_end
+	ld	de, L_.str
+	loc	2 18 5
+	push	de
+	push	hl
+	call	_sprintf
 	private	tmp2
 tmp2:
-	ld	hl, -1048576
-	ld	e, 66
-	call	__fadd
-	private	tmp3
-tmp3:
-	ld	(ix - 3), bc
-	ld	(ix - 4), a
-	loc	2 22 11
-	ld	bc, (ix - 7)
-	ld	a, (ix - 8)
-	ld	hl, 2097152
-	inc	e
-	call	__fadd
-	private	tmp4
-tmp4:
-	loc	2 0 11 is_stmt 0
-	ld	hl, -3670016
-	dec	e
-	loc	2 24 11 is_stmt 1
-	call	__fmul
-	private	tmp5
-tmp5:
-	push	bc
-	pop	iy
-	ld	d, a
-	loc	2 25 11
-	ld	bc, (ix - 3)
-	ld	a, (ix - 4)
-	call	__fmul
-	private	tmp6
-tmp6:
-	push	bc
-	pop	hl
-	ld	e, a
-	loc	2 27 28
-	lea	bc, iy
-	ld	a, d
-	call	__ftol
-	private	tmp7
-tmp7:
-	push	bc
-	pop	iy
-	loc	2 27 41 is_stmt 0
-	push	hl
-	pop	bc
-	ld	a, e
-	call	__ftol
-	private	tmp8
-tmp8:
-	loc	2 27 5
-	push	bc
-	push	iy
-	ld	hl, (ix + 6)
-	private	tmp9
-tmp9:
-	push	hl
-	call	_gfx_RLETSprite
-	private	tmp10
-tmp10:
-	loc	2 28 1 is_stmt 1
+	loc	2 30 1
 	ld	sp, ix
 	pop	ix
 	cfi_def_cfa sp, 3
 	cfi_restore ix
 	ret
-	private	tmp11
-tmp11:
+	private	tmp3
+tmp3:
 	section	.text,"ax",@progbits
 	private	func_end0
 func_end0:
 	cfi_endproc
-	file	5 "C:\games\CEdev" "include\graphx.h" md5 0x9182ed22f00c123d838469e0bb01c04e
 
 	section	.text,"ax",@progbits
 	public	_drw_GetCameraPos
 _drw_GetCameraPos:
 	private	func_begin1
 func_begin1:
-	loc	2 30 0
+	loc	2 32 0
 	cfi_startproc
 	call	__frameset0
-	private	tmp12
-tmp12:
+	private	tmp4
+tmp4:
 	cfi_def_cfa ix, 6
 	cfi_offset ix, -6
 	loc	2 0 0 prologue_end
 	ld	iy, _camera_pos
-	loc	2 31 12
+	loc	2 33 12
 	ld	bc, (_camera_pos)
 	ld	de, (_camera_pos+3)
 	lea	hl, iy + 6
@@ -144,14 +64,14 @@ tmp12:
 	ld	(iy + 3), de
 	ld	(iy + 6), l
 	ld	(iy + 7), h
-	loc	2 31 5 is_stmt 0
+	loc	2 33 5 is_stmt 0
 	lea	hl, iy
 	pop	ix
 	cfi_def_cfa sp, 3
 	cfi_restore ix
 	ret
-	private	tmp13
-tmp13:
+	private	tmp5
+tmp5:
 	section	.text,"ax",@progbits
 	private	func_end1
 func_end1:
@@ -162,16 +82,16 @@ func_end1:
 _drw_SetCameraPos:
 	private	func_begin2
 func_begin2:
-	loc	2 34 0 is_stmt 1
+	loc	2 36 0 is_stmt 1
 	cfi_startproc
 	call	__frameset0
-	private	tmp14
-tmp14:
+	private	tmp6
+tmp6:
 	cfi_def_cfa ix, 6
 	cfi_offset ix, -6
 	loc	2 0 0 prologue_end
 	ld	iy, _camera_pos
-	loc	2 35 18
+	loc	2 37 18
 	ld	hl, (ix + 6)
 	ld	de, (ix + 9)
 	ld	bc, (ix + 12)
@@ -181,47 +101,33 @@ tmp14:
 	ld	(hl), c
 	inc	hl
 	ld	(hl), b
-	loc	2 36 1
+	loc	2 38 1
 	pop	ix
 	cfi_def_cfa sp, 3
 	cfi_restore ix
 	ret
-	private	tmp15
-tmp15:
+	private	tmp7
+tmp7:
 	section	.text,"ax",@progbits
 	private	func_end2
 func_end2:
 	cfi_endproc
+
+	section	.rodata,"a",@progbits
+	private	L_.str
+L_.str:
+	db	"drw_DrawRLETCamera", 0
 
 	section	.bss,"aw",@nobits
 	private	_camera_pos
 _camera_pos:
 	rb	8
 
-	section	.debug_loclists,"",@progbits
-	dd	debug_list_header_end0-debug_list_header_start0
-	private	debug_list_header_start0
-debug_list_header_start0:
-	dw	5
-	db	3
-	db	0
-	dd	1
-	private	loclists_table_base0
-loclists_table_base0:
-	dd	debug_loc0-loclists_table_base0
-	private	debug_loc0
-debug_loc0:
-	db	4
-	uleb128	tmp9-func_begin0
-	uleb128	tmp10-func_begin0
-	db	1
-	db	82
-	db	0
-	private	debug_list_header_end0
-debug_list_header_end0:
+	file	3 "C:\games\CEdev" "include\stdint.h" md5 0xefb8540da62ce56ff575dd92d043acf8
+	file	4 "C:\games\CEdev" "include\graphx.h" md5 0x9182ed22f00c123d838469e0bb01c04e
 	section	.debug_abbrev,"",@progbits
-	private	abbrev_start34
-abbrev_start34:
+	private	abbrev_start26
+abbrev_start26:
 	db	1
 	db	17
 	db	1
@@ -242,8 +148,6 @@ abbrev_start34:
 	db	18
 	db	6
 	db	115
-	db	23
-	db	"Œ"
 	db	23
 	db	0
 	db	0
@@ -315,6 +219,13 @@ abbrev_start34:
 	db	0
 	db	0
 	db	7
+	db	15
+	db	0
+	db	73
+	db	19
+	db	0
+	db	0
+	db	8
 	db	46
 	db	1
 	db	17
@@ -335,21 +246,6 @@ abbrev_start34:
 	db	25
 	db	63
 	db	25
-	db	0
-	db	0
-	db	8
-	db	5
-	db	0
-	db	2
-	db	34
-	db	3
-	db	37
-	db	58
-	db	11
-	db	59
-	db	11
-	db	73
-	db	19
 	db	0
 	db	0
 	db	9
@@ -366,89 +262,6 @@ abbrev_start34:
 	db	0
 	db	0
 	db	10
-	db	72
-	db	0
-	db	127
-	db	19
-	db	125
-	db	27
-	db	0
-	db	0
-	db	11
-	db	46
-	db	1
-	db	3
-	db	37
-	db	58
-	db	11
-	db	59
-	db	5
-	db	39
-	db	25
-	db	60
-	db	25
-	db	63
-	db	25
-	db	0
-	db	0
-	db	12
-	db	5
-	db	0
-	db	73
-	db	19
-	db	0
-	db	0
-	db	13
-	db	15
-	db	0
-	db	73
-	db	19
-	db	0
-	db	0
-	db	14
-	db	38
-	db	0
-	db	73
-	db	19
-	db	0
-	db	0
-	db	15
-	db	19
-	db	1
-	db	11
-	db	11
-	db	58
-	db	11
-	db	59
-	db	11
-	db	0
-	db	0
-	db	16
-	db	1
-	db	1
-	db	73
-	db	19
-	db	0
-	db	0
-	db	17
-	db	33
-	db	0
-	db	73
-	db	19
-	db	0
-	db	0
-	db	18
-	db	36
-	db	0
-	db	3
-	db	37
-	db	11
-	db	11
-	db	62
-	db	11
-	db	0
-	db	0
-	db	19
 	db	46
 	db	0
 	db	17
@@ -471,6 +284,49 @@ abbrev_start34:
 	db	19
 	db	63
 	db	25
+	db	0
+	db	0
+	db	11
+	db	38
+	db	0
+	db	73
+	db	19
+	db	0
+	db	0
+	db	12
+	db	19
+	db	1
+	db	11
+	db	11
+	db	58
+	db	11
+	db	59
+	db	11
+	db	0
+	db	0
+	db	13
+	db	1
+	db	1
+	db	73
+	db	19
+	db	0
+	db	0
+	db	14
+	db	33
+	db	0
+	db	73
+	db	19
+	db	0
+	db	0
+	db	15
+	db	36
+	db	0
+	db	3
+	db	37
+	db	11
+	db	11
+	db	62
+	db	11
 	db	0
 	db	0
 	db	0
@@ -483,7 +339,7 @@ debug_info_start0:
 	dw	5
 	db	1
 	db	3
-	dd	abbrev_start34
+	dd	abbrev_start26
 	db	1
 	db	0
 	dw	12
@@ -494,17 +350,16 @@ debug_info_start0:
 	db	1
 	dd	func_end2-func_begin0
 	dd	addr_table_base0
-	dd	loclists_table_base0
 	db	2
 	db	3
-	dd	50
+	dd	46
 	db	2
-	db	14
+	db	15
 	db	2
 	db	161
 	db	0
 	db	3
-	dd	58
+	dd	54
 	db	8
 	db	1
 	db	20
@@ -515,13 +370,13 @@ debug_info_start0:
 	db	18
 	db	5
 	db	4
-	dd	82
+	dd	78
 	db	1
 	db	19
 	db	0
 	db	5
 	db	6
-	dd	82
+	dd	78
 	db	1
 	db	19
 	db	4
@@ -530,148 +385,118 @@ debug_info_start0:
 	db	5
 	db	4
 	db	4
-	db	3
-	dd	94
-	db	11
-	db	4
-	db	22
-	db	3
-	dd	102
-	db	10
-	db	3
-	db	55
+	db	7
+	dd	87
 	db	6
 	db	9
-	db	5
-	db	3
-	db	7
+	db	6
+	db	1
+	db	8
 	db	1
 	dd	func_end0-func_begin0
 	db	1
 	db	84
 
-	db	19
-	db	2
-	db	16
-
-
-	db	8
-	db	0
-	db	22
-	db	2
-	db	16
-	dd	266
-	db	9
-	db	24
-	db	2
-	db	16
-	dd	50
 	db	10
-	dd	141
 	db	2
-	db	0
-	db	11
-	db	12
-	db	5
-	dw	1555
-
-
-
-	db	12
-	dd	162
-	db	12
-	dd	102
-	db	12
-	dd	102
-	db	0
-	db	13
-	dd	167
-	db	14
-	dd	172
-	db	15
-	db	2
-	db	5
-	db	95
-	db	5
-	db	13
-	dd	204
-	db	5
-	db	96
-	db	0
-	db	5
-	db	16
-	dd	204
-	db	5
-	db	97
-	db	1
-	db	5
 	db	17
-	dd	216
-	db	5
-	db	98
+
+
+	db	9
+	db	13
 	db	2
-	db	0
-	db	3
-	dd	212
-	db	15
-	db	3
-	db	11
-	db	6
-	db	14
-	db	8
-	db	1
-	db	16
-	dd	204
 	db	17
-	dd	227
+	dd	154
+	db	9
+	db	21
+	db	2
+	db	17
+	dd	46
 	db	0
-	db	18
-	db	18
-	db	8
-	db	7
-	db	19
-	db	3
+	db	10
+	db	2
 	dd	func_end1-func_begin1
 	db	1
 	db	84
 
-	db	20
+	db	11
 	db	2
-	db	30
+	db	32
 
-	dd	50
+	dd	46
 
-	db	7
-	db	4
+	db	8
+	db	3
 	dd	func_end2-func_begin2
 	db	1
 	db	84
 
-	db	21
+	db	12
 	db	2
-	db	34
+	db	36
 
 
 	db	9
-	db	24
+	db	21
 	db	2
-	db	34
-	dd	50
+	db	36
+	dd	46
 	db	0
-	db	13
-	dd	271
-	db	14
-	dd	276
+	db	7
+	dd	159
+	db	11
+	dd	164
 	db	3
 	dd	172
-	db	23
+	db	20
+	db	4
+	db	78
+	db	12
+	db	2
+	db	4
+	db	74
 	db	5
-	db	99
+	db	14
+	dd	204
+	db	4
+	db	75
+	db	0
+	db	5
+	db	17
+	dd	204
+	db	4
+	db	76
+	db	1
+	db	5
+	db	18
+	dd	216
+	db	4
+	db	77
+	db	2
+	db	0
+	db	3
+	dd	212
+	db	16
+	db	3
+	db	11
+	db	6
+	db	15
+	db	8
+	db	1
+	db	13
+	dd	204
+	db	14
+	dd	227
+	db	0
+	db	15
+	db	19
+	db	8
+	db	7
 	db	0
 	private	debug_info_end0
 debug_info_end0:
 	section	.debug_str_offsets,"",@progbits
-	dd	104
+	dd	92
 	dw	5
 	dw	0
 	private	str_offsets_base0
@@ -706,51 +531,42 @@ info_string8:
 	db	"vec2", 0
 	private	info_string9
 info_string9:
-	db	"int", 0
+	db	"char", 0
 	private	info_string10
 info_string10:
-	db	"int24_t", 0
+	db	"drw_DrawRLETCamera", 0
 	private	info_string11
 info_string11:
-	db	"i24", 0
+	db	"drw_GetCameraPos", 0
 	private	info_string12
 info_string12:
-	db	"gfx_RLETSprite", 0
+	db	"drw_SetCameraPos", 0
 	private	info_string13
 info_string13:
-	db	"width", 0
+	db	"sprite", 0
 	private	info_string14
 info_string14:
-	db	"unsigned char", 0
+	db	"width", 0
 	private	info_string15
 info_string15:
-	db	"uint8_t", 0
+	db	"unsigned char", 0
 	private	info_string16
 info_string16:
-	db	"height", 0
+	db	"uint8_t", 0
 	private	info_string17
 info_string17:
-	db	"data", 0
+	db	"height", 0
 	private	info_string18
 info_string18:
-	db	"__ARRAY_SIZE_TYPE__", 0
+	db	"data", 0
 	private	info_string19
 info_string19:
-	db	"drw_DrawRLETCamera", 0
+	db	"__ARRAY_SIZE_TYPE__", 0
 	private	info_string20
 info_string20:
-	db	"drw_GetCameraPos", 0
+	db	"gfx_sprite_t", 0
 	private	info_string21
 info_string21:
-	db	"drw_SetCameraPos", 0
-	private	info_string22
-info_string22:
-	db	"sprite", 0
-	private	info_string23
-info_string23:
-	db	"gfx_rletsprite_t", 0
-	private	info_string24
-info_string24:
 	db	"pos", 0
 	section	.debug_str_offsets,"",@progbits
 	dd	info_string0
@@ -775,9 +591,6 @@ info_string24:
 	dd	info_string19
 	dd	info_string20
 	dd	info_string21
-	dd	info_string22
-	dd	info_string23
-	dd	info_string24
 	section	.debug_addr,"",@progbits
 	dd	debug_addr_end0-debug_addr_start0
 	private	debug_addr_start0
@@ -789,7 +602,6 @@ debug_addr_start0:
 addr_table_base0:
 	dl	_camera_pos
 	dl	func_begin0
-	dl	tmp10
 	dl	func_begin1
 	dl	func_begin2
 	private	debug_addr_end0
@@ -799,10 +611,5 @@ debug_addr_end0:
 line_table_start0:
 	extern	__Unwind_SjLj_Register
 	extern	__Unwind_SjLj_Unregister
-	extern	_gfx_RLETSprite
-	extern	__frameset
-	extern	__fadd
+	extern	_sprintf
 	extern	__frameset0
-	extern	__fsub
-	extern	__fmul
-	extern	__ftol

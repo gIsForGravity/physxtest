@@ -23,7 +23,7 @@ typedef struct Character {
     u24 anim_frame;
 } Character;
 
-extern const Character chr_oiram;
+void chr_setcharacter_oiram(Character* oiram_chr);
 
 #ifdef __cplusplus
 }

@@ -3,6 +3,8 @@
         "graphx.h": "c",
         "gfx.h": "c",
         "global_palette.h": "c",
-        "debug.h": "c"
+        "debug.h": "c",
+        "basetypes.h": "c",
+        "stdlib.h": "c"
     }
 }

@@ -1,19 +1,19 @@
 	section	.text,"ax",@progbits
 	assume	adl = 1
-	file	0 "C:\games\CEdev\projects\physxtest" "src\character.c" md5 0x119d340a426f13f6f501e52b74ec7432
+	file	0 "C:\games\CEdev\projects\physxtest" "src\character.c" md5 0x15685c66f910e1634e3d7d9d0bfb3a00
 	file	1 "src/types" "IDrawable.h" md5 0xe751241ef46e6c5ac3f29b44b347b69b
-	file	2 "src" "character.h" md5 0xd6f762ae2bc6a4f38c3e1c08507e3047
+	file	2 "src" "character.h" md5 0xbba9e4ae6b1db97a75f7c30f385c97e8
 	file	3 "src/types" "vec2.h" md5 0xb3c9a5f73d69c4fd2a8743b5bc7a9028
 	file	4 "C:\games\CEdev" "include\stdint.h" md5 0xefb8540da62ce56ff575dd92d043acf8
 	file	5 "src/types" "basetypes.h" md5 0x929cfe7db14affe672f51e7197c17a57
-	file	6 "C:/games/CEdev/projects/physxtest/src" "character.c" md5 0x119d340a426f13f6f501e52b74ec7432
-	file	7 "C:\games\CEdev" "include\graphx.h" md5 0x9182ed22f00c123d838469e0bb01c04e
+	file	6 "C:\games\CEdev" "include\graphx.h" md5 0x9182ed22f00c123d838469e0bb01c04e
 	section	.text,"ax",@progbits
-	private	_chr_oiram_draw
-_chr_oiram_draw:
+	public	_chr_setcharacter_oiram
+_chr_setcharacter_oiram:
 	private	func_begin0
 func_begin0:
-	loc	6 18 0
+	file	7 "C:/games/CEdev/projects/physxtest/src" "character.c" md5 0x15685c66f910e1634e3d7d9d0bfb3a00
+	loc	7 29 0
 	cfi_sections .debug_frame
 	cfi_startproc
 	call	__frameset0
@@ -24,23 +24,91 @@ tmp0:
 	ld	iy, (ix + 6)
 	private	tmp1
 tmp1:
-	loc	6 21 9 prologue_end
+	loc	7 0 0 prologue_end
+	ld	de, _chr_oiram_draw
+	or	a, a
+	sbc	hl, hl
+	xor	a, a
+	private	tmp2
+tmp2:
+	loc	7 30 18
+	ld	(iy), de
+	lea	de, iy
+	ld	(iy + 3), de
+	ld	(iy + 6), hl
+	ld	(iy + 9), a
+	ld	(iy + 10), hl
+	ld	(iy + 13), a
+	ld	(iy + 14), hl
+	loc	7 35 1
+	pop	ix
+	cfi_def_cfa sp, 3
+	cfi_restore ix
+	ret
+	private	tmp3
+tmp3:
+	section	.text,"ax",@progbits
+	private	func_end0
+func_end0:
+	cfi_endproc
+
+	section	.text,"ax",@progbits
+	private	_chr_oiram_draw
+_chr_oiram_draw:
+	private	func_begin1
+func_begin1:
+	loc	7 19 0
+	cfi_startproc
+	call	__frameset0
+	private	tmp4
+tmp4:
+	cfi_def_cfa ix, 6
+	cfi_offset ix, -6
+	ld	de, -327680
+	private	tmp5
+tmp5:
+	loc	7 0 0 prologue_end
+	ld	hl, L_.str
+	loc	7 20 5
+	push	hl
+	push	de
+	call	_sprintf
+	private	tmp6
+tmp6:
+	pop	hl
+	pop	hl
+	private	tmp7
+tmp7:
+	loc	7 23 9
+	ld	iy, (ix + 6)
 	ld	hl, (iy + 14)
 	add	hl, bc
 	or	a, a
 	sbc	hl, bc
-	jq	nz, BB0_2
-	private	tmp2
-tmp2:
-	loc	6 22 41
+	jq	nz, BB1_2
+	private	tmp8
+tmp8:
+	loc	7 0 0 is_stmt 0
+	ld	hl, L_.str.1
+	private	tmp9
+tmp9:
+	loc	7 24 9 is_stmt 1
+	push	hl
+	ld	hl, -327680
+	push	hl
+	call	_sprintf
+	private	tmp10
+tmp10:
+	pop	hl
+	pop	hl
+	loc	7 25 41
+	ld	iy, (ix + 6)
 	lea	hl, iy + 6
-	loc	6 22 9 is_stmt 0
+	loc	7 25 9 is_stmt 0
 	push	de
 	push	de
 	push	de
 	ld	iy, 0
-	private	tmp3
-tmp3:
 	add	iy, sp
 	lea	de, iy + 3
 	ld	bc, 8
@@ -48,35 +116,37 @@ tmp3:
 	ld	hl, _oiram_data
 	push	hl
 	call	_drw_DrawRLETCamera
-	private	tmp4
-tmp4:
+	private	tmp11
+tmp11:
 	pop	hl
 	pop	hl
 	pop	hl
 	pop	hl
-	private	tmp5
-tmp5:
-BB0_2:
-	loc	6 23 1 is_stmt 1
+	private	tmp12
+tmp12:
+BB1_2:
+	loc	7 27 1 is_stmt 1
 	pop	ix
 	cfi_def_cfa sp, 3
 	cfi_restore ix
 	ret
-	private	tmp6
-tmp6:
+	private	tmp13
+tmp13:
 	section	.text,"ax",@progbits
-	private	func_end0
-func_end0:
+	private	func_end1
+func_end1:
 	cfi_endproc
-	file	8 "src" "draw.h" md5 0x2e47250a28071ca7ccfda18a66d7b9fb
+	file	8 "src" "draw.h" md5 0x3444c992f85ebb8ad67b7c683bfcd88f
 
 	section	.rodata,"a",@progbits
-	public	_chr_oiram
-_chr_oiram:
-	dl	_chr_oiram_draw
-	dl	_chr_oiram
-	db	8 dup 0
-	dl	0
+	private	L_.str
+L_.str:
+	db	"chr_oiram_draw", 10, 0
+
+	section	.rodata,"a",@progbits
+	private	L_.str.1
+L_.str.1:
+	db	"checked anim_frame", 10, 0
 
 	section	.debug_loclists,"",@progbits
 	dd	debug_list_header_end0-debug_list_header_start0
@@ -85,32 +155,23 @@ debug_list_header_start0:
 	dw	5
 	db	3
 	db	0
-	dd	2
+	dd	1
 	private	loclists_table_base0
 loclists_table_base0:
 	dd	debug_loc0-loclists_table_base0
-	dd	debug_loc1-loclists_table_base0
 	private	debug_loc0
 debug_loc0:
 	db	4
-	uleb128	tmp1-func_begin0
-	uleb128	tmp3-func_begin0
-	db	1
-	db	85
-	db	0
-	private	debug_loc1
-debug_loc1:
-	db	4
-	uleb128	tmp1-func_begin0
-	uleb128	tmp3-func_begin0
+	uleb128	tmp2-func_begin0
+	uleb128	func_end0-func_begin0
 	db	1
 	db	85
 	db	0
 	private	debug_list_header_end0
 debug_list_header_end0:
 	section	.debug_abbrev,"",@progbits
-	private	abbrev_start47
-abbrev_start47:
+	private	abbrev_start50
+abbrev_start50:
 	db	1
 	db	17
 	db	1
@@ -137,30 +198,29 @@ abbrev_start47:
 	db	0
 	db	0
 	db	2
-	db	52
+	db	15
 	db	0
-	db	3
-	db	37
-	db	73
-	db	19
-	db	63
-	db	25
-	db	58
-	db	11
-	db	59
-	db	11
-	db	2
-	db	24
 	db	0
 	db	0
 	db	3
-	db	38
+	db	15
 	db	0
 	db	73
 	db	19
 	db	0
 	db	0
 	db	4
+	db	36
+	db	0
+	db	3
+	db	37
+	db	62
+	db	11
+	db	11
+	db	11
+	db	0
+	db	0
+	db	5
 	db	22
 	db	0
 	db	73
@@ -173,7 +233,7 @@ abbrev_start47:
 	db	11
 	db	0
 	db	0
-	db	5
+	db	6
 	db	19
 	db	1
 	db	3
@@ -186,7 +246,7 @@ abbrev_start47:
 	db	11
 	db	0
 	db	0
-	db	6
+	db	7
 	db	13
 	db	0
 	db	3
@@ -199,13 +259,6 @@ abbrev_start47:
 	db	11
 	db	56
 	db	11
-	db	0
-	db	0
-	db	7
-	db	15
-	db	0
-	db	73
-	db	19
 	db	0
 	db	0
 	db	8
@@ -228,22 +281,6 @@ abbrev_start47:
 	db	0
 	db	0
 	db	11
-	db	15
-	db	0
-	db	0
-	db	0
-	db	12
-	db	36
-	db	0
-	db	3
-	db	37
-	db	62
-	db	11
-	db	11
-	db	11
-	db	0
-	db	0
-	db	13
 	db	19
 	db	1
 	db	11
@@ -254,21 +291,21 @@ abbrev_start47:
 	db	11
 	db	0
 	db	0
-	db	14
+	db	12
 	db	1
 	db	1
 	db	73
 	db	19
 	db	0
 	db	0
-	db	15
+	db	13
 	db	33
 	db	0
 	db	73
 	db	19
 	db	0
 	db	0
-	db	16
+	db	14
 	db	36
 	db	0
 	db	3
@@ -277,6 +314,44 @@ abbrev_start47:
 	db	11
 	db	62
 	db	11
+	db	0
+	db	0
+	db	15
+	db	46
+	db	1
+	db	17
+	db	27
+	db	18
+	db	6
+	db	64
+	db	24
+	db	122
+	db	25
+	db	3
+	db	37
+	db	58
+	db	11
+	db	59
+	db	11
+	db	39
+	db	25
+	db	63
+	db	25
+	db	0
+	db	0
+	db	16
+	db	5
+	db	0
+	db	2
+	db	34
+	db	3
+	db	37
+	db	58
+	db	11
+	db	59
+	db	11
+	db	73
+	db	19
 	db	0
 	db	0
 	db	17
@@ -303,8 +378,6 @@ abbrev_start47:
 	db	18
 	db	5
 	db	0
-	db	2
-	db	34
 	db	3
 	db	37
 	db	58
@@ -318,8 +391,6 @@ abbrev_start47:
 	db	19
 	db	52
 	db	0
-	db	2
-	db	34
 	db	3
 	db	37
 	db	58
@@ -356,6 +427,13 @@ abbrev_start47:
 	db	25
 	db	0
 	db	0
+	db	22
+	db	38
+	db	0
+	db	73
+	db	19
+	db	0
+	db	0
 	db	0
 	section	.debug_info,"",@progbits
 	private	cu_begin0
@@ -366,7 +444,7 @@ debug_info_start0:
 	dw	5
 	db	1
 	db	3
-	dd	abbrev_start47
+	dd	abbrev_start50
 	db	1
 	db	0
 	dw	12
@@ -374,199 +452,210 @@ debug_info_start0:
 	dd	str_offsets_base0
 	dd	line_table_start0
 	db	2
-	db	1
-	dd	func_end0-func_begin0
+	db	0
+	dd	func_end1-func_begin0
 	dd	addr_table_base0
 	dd	loclists_table_base0
 	db	2
 	db	3
-	dd	50
-
-	db	6
-	db	25
-	db	2
-	db	161
-	db	0
-	db	3
-	dd	55
+	dd	45
 	db	4
-	dd	63
+	db	3
+	db	6
+	db	1
+	db	3
+	dd	54
+	db	5
+	dd	62
 	db	18
 	db	2
 	db	24
-	db	5
+	db	6
 	db	18
 	db	17
 	db	2
 	db	20
-	db	6
+	db	7
 	db	4
-	dd	96
+	dd	95
 	db	2
 	db	21
 	db	0
-	db	6
+	db	7
 	db	8
-	dd	147
+	dd	145
 	db	2
 	db	22
 	db	6
-	db	6
+	db	7
 	db	14
-	dd	183
+	dd	181
 	db	2
 	db	23
 	db	14
 	db	0
-	db	4
-	dd	104
+	db	5
+	dd	103
 	db	7
 	db	1
 	db	20
-	db	5
+	db	6
 	db	7
 	db	6
 	db	1
 	db	17
-	db	6
+	db	7
 	db	5
-	dd	128
+	dd	127
 	db	1
 	db	18
 	db	0
+	db	7
 	db	6
-	db	6
-	dd	146
+	dd	39
 	db	1
 	db	19
 	db	3
 	db	0
-	db	7
-	dd	133
+	db	3
+	dd	132
 	db	8
 
 	db	9
-	dd	140
+	dd	139
 	db	0
-	db	7
-	dd	145
+	db	3
+	dd	144
 	db	10
-	db	11
-	db	4
-	dd	155
+	db	5
+	dd	153
 	db	13
 	db	3
 	db	20
-	db	5
+	db	6
 	db	12
 	db	8
 	db	3
 	db	18
-	db	6
+	db	7
 	db	9
-	dd	179
+	dd	177
 	db	3
 	db	19
 	db	0
-	db	6
+	db	7
 	db	11
-	dd	179
+	dd	177
 	db	3
 	db	19
 	db	4
 	db	0
-	db	12
+	db	4
 	db	10
 	db	4
 	db	4
-	db	4
-	dd	191
+	db	5
+	dd	189
 	db	17
 	db	5
 	db	23
-	db	4
-	dd	199
+	db	5
+	dd	197
 	db	16
 	db	4
 	db	60
-	db	12
+	db	4
 	db	15
 	db	7
 	db	3
-	db	7
-	dd	55
-	db	7
-	dd	213
-	db	4
-	dd	221
+	db	3
+	dd	206
+	db	5
+	dd	214
 	db	25
-	db	7
-	db	99
-	db	13
-	db	2
-	db	7
-	db	95
 	db	6
+	db	78
+	db	11
+	db	2
+	db	6
+	db	74
+	db	7
 	db	19
-	dd	253
-	db	7
-	db	96
+	dd	246
+	db	6
+	db	75
 	db	0
-	db	6
+	db	7
 	db	22
-	dd	253
-	db	7
-	db	97
-	db	1
+	dd	246
 	db	6
-	db	23
-	dd	265
+	db	76
+	db	1
 	db	7
-	db	98
+	db	23
+	dd	258
+	db	6
+	db	77
 	db	2
 	db	0
-	db	4
-	dd	261
+	db	5
+	dd	254
 	db	21
 	db	4
 	db	11
-	db	12
+	db	4
 	db	20
 	db	8
 	db	1
-	db	14
-	dd	253
-	db	15
-	dd	276
+	db	12
+	dd	246
+	db	13
+	dd	269
 	db	0
-	db	16
+	db	14
 	db	24
 	db	8
 	db	7
-	db	17
-	db	1
+	db	15
+	db	0
 	dd	func_end0-func_begin0
 	db	1
 	db	84
 
 	db	27
-	db	6
-	db	18
+	db	7
+	db	29
+
+
+	db	16
+	db	0
+	db	29
+	db	7
+	db	29
+	dd	49
+	db	0
+	db	17
+	db	1
+	dd	func_end1-func_begin1
+	db	1
+	db	84
+
+	db	28
+	db	7
+	db	19
 
 	db	18
-	db	1
-	db	28
-	db	6
-	db	18
-	dd	140
+	db	30
+	db	7
 	db	19
-	db	0
-	db	6
-	db	6
+	dd	139
 	db	19
-	dd	341
+	db	6
+	db	7
+	db	21
+	dd	353
 	db	20
-	dd	316
+	dd	328
 	db	2
 	db	0
 	db	21
@@ -577,21 +666,23 @@ debug_info_start0:
 
 
 	db	9
-	dd	331
+	dd	343
 	db	9
-	dd	155
+	dd	153
 	db	0
-	db	7
-	dd	336
 	db	3
-	dd	221
-	db	7
-	dd	50
+	dd	348
+	db	22
+	dd	214
+	db	3
+	dd	358
+	db	22
+	dd	54
 	db	0
 	private	debug_info_end0
 debug_info_end0:
 	section	.debug_str_offsets,"",@progbits
-	dd	120
+	dd	128
 	dw	5
 	dw	0
 	private	str_offsets_base0
@@ -608,7 +699,7 @@ info_string2:
 	db	"C:\games\CEdev\projects\physxtest", 0
 	private	info_string3
 info_string3:
-	db	"chr_oiram", 0
+	db	"char", 0
 	private	info_string4
 info_string4:
 	db	"to_IDrawable", 0
@@ -674,15 +765,21 @@ info_string24:
 	db	"__ARRAY_SIZE_TYPE__", 0
 	private	info_string25
 info_string25:
-	db	"gfx_rletsprite_t", 0
+	db	"gfx_sprite_t", 0
 	private	info_string26
 info_string26:
 	db	"drw_DrawRLETCamera", 0
 	private	info_string27
 info_string27:
-	db	"chr_oiram_draw", 0
+	db	"chr_setcharacter_oiram", 0
 	private	info_string28
 info_string28:
+	db	"chr_oiram_draw", 0
+	private	info_string29
+info_string29:
+	db	"oiram_chr", 0
+	private	info_string30
+info_string30:
 	db	"self_ptr", 0
 	section	.debug_str_offsets,"",@progbits
 	dd	info_string0
@@ -714,6 +811,8 @@ info_string28:
 	dd	info_string26
 	dd	info_string27
 	dd	info_string28
+	dd	info_string29
+	dd	info_string30
 	section	.debug_addr,"",@progbits
 	dd	debug_addr_end0-debug_addr_start0
 	private	debug_addr_start0
@@ -723,9 +822,9 @@ debug_addr_start0:
 	db	0
 	private	addr_table_base0
 addr_table_base0:
-	dl	_chr_oiram
 	dl	func_begin0
-	dl	tmp4
+	dl	func_begin1
+	dl	tmp11
 	private	debug_addr_end0
 debug_addr_end0:
 	ident	"clang version 14.0.0 (https://github.com/jacobly0/llvm-project a139def90d26173f771eb1eca797633d1fbb2797)"
@@ -733,6 +832,7 @@ debug_addr_end0:
 line_table_start0:
 	extern	__Unwind_SjLj_Register
 	extern	__Unwind_SjLj_Unregister
+	extern	_sprintf
 	extern	_drw_DrawRLETCamera
 	extern	__frameset0
 	extern	_oiram_data
