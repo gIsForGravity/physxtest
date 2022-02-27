@@ -6,6 +6,7 @@ palettes:
 
 converts:
   - name: sprites
+    transparent-color-index: 0
     palette: palette
     style: rlet
     images:
