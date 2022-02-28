@@ -8,7 +8,7 @@ DESCRIPTION = "CE C Toolchain Demo"
 COMPRESSED = NO
 ARCHIVED = NO
 
-CFLAGS = -Wall -Wextra -Oz
+CFLAGS = -Wall -Wextra -Oz -Werror=return-type
 CXXFLAGS = -Wall -Wextra -Oz
 
 # ----------------------------
