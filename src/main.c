@@ -34,9 +34,6 @@ int main(void)
     dbg_printf("running testballs");
     dbg_printf("before begin\n");
     begin();
-    for (u8 i = 0; i < sizeof(idrawables) / sizeof(IDrawable*); i++) {
-        dbg_printf("begin(): %i is %p\n", i, idrawables[i]);
-    }
     dbg_printf("gfx stuff\n");
     gfx_Begin();
     gfx_SetPalette(palette, sizeof_palette, 0);
@@ -57,10 +54,6 @@ int main(void)
 void draw(void) {
     dbg_printf("fill screenn\n");
     gfx_FillScreen(0x14);
-
-    for (u8 i = 0; i < sizeof(idrawables) / sizeof(IDrawable*); i++) {
-        dbg_printf("draw(): %i is %p\n", i, idrawables[i]);
-    }
 
     dbg_printf("for loop\n");
     dbg_printf("draw(): %p\n", idrawables[1]);
