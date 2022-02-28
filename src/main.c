@@ -39,6 +39,7 @@ int main(void)
     }
     dbg_printf("gfx stuff\n");
     gfx_Begin();
+    gfx_SetPalette(palette, sizeof_palette, 0);
     gfx_SetDrawBuffer();
 
     dbg_printf("about to step first time\n");
