@@ -6,15 +6,15 @@
  * Copyright (c) Gavin Tantleff 2022. All Rights Reserved.
  */
 
-#ifndef TYPES_H
-#define TYPES_H
+#ifndef TYPES_BASETYPES_H
+#define TYPES_BASETYPES_H
 
 /* Includes */
 #include <stdint.h>
 
 #ifdef __cplusplus
 extern "C" {
-#endif
+#endif /* __cplusplus */
 
 typedef int8_t i8;
 typedef uint8_t u8;
@@ -28,6 +28,6 @@ typedef float f32;
 
 #ifdef __cplusplus
 }
-#endif
+#endif /* __cplusplus */
 
-#endif
+#endif /* TYPES_BASETYPES_H */

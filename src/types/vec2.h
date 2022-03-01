@@ -6,15 +6,15 @@
  * Copyright (c) Gavin Tantleff 2022. All Rights Reserved.
  */
 
-#ifndef VEC2_H
-#define VEC2_H
+#ifndef TYPES_VEC2_H
+#define TYPES_VEC2_H
 
 /* Includes */
 #include "basetypes.h"
 
 #ifdef __cplusplus
 extern "C" {
-#endif
+#endif /* __cplusplus */
 
 typedef struct vector2 {
     float x, y;
@@ -82,6 +82,6 @@ vec2 vec2_norm(vec2 vec);
 
 #ifdef __cplusplus
 }
-#endif
+#endif /* __cplusplus */
 
-#endif /* VEC2_H */
+#endif /* TYPES_VEC2_H */

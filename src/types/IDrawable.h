@@ -7,8 +7,8 @@
  * Copyright (c) Gavin Tantleff 2022. All Rights Reserved.
  */
 
-#ifndef IDRAWABLE_H
-#define IDRAWABLE_H
+#ifndef TYPES_IDRAWABLE_H
+#define TYPES_IDRAWABLE_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -23,4 +23,4 @@ typedef struct IDrawable {
 }
 #endif /* __cplusplus */
 
-#endif /* IDRAWABLE_H */
+#endif /* TYPES_IDRAWABLE_H */
