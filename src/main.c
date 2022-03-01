@@ -14,7 +14,7 @@
 
 #include "types/basetypes.h"
 #include "character.h"
-#include "error.h"
+#include "util/error.h"
 #include "gfx/gfx.h"
 
 /* Function declarations */
