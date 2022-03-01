@@ -11,8 +11,8 @@
 #include <stdbool.h>
 #include <keypadc.h>
 #include <debug.h>
-
 #include "types/basetypes.h"
+#include "types/AABB.h"
 #include "character.h"
 #include "util/error.h"
 #include "gfx/gfx.h"
@@ -52,20 +52,12 @@ int main(void)
 }
 
 void draw(void) {
-    dbg_printf("fill screenn\n");
     gfx_FillScreen(0x14);
 
-    dbg_printf("for loop\n");
-    dbg_printf("draw(): %p\n", idrawables[1]);
     for (u8 i = 0; i < sizeof(idrawables) / sizeof(IDrawable*); i++) {
-        dbg_printf("iteration %i\n", i);
-        dbg_printf("draw(): %i is %p\n", i, idrawables[i]);
         IDrawable* drawable = idrawables[i];
 
         if (NULL != drawable) {
-            dbg_printf("draw(): %i is %p\n", i, idrawables[i]);
-            dbg_printf("draw(): drawable is %p\n", drawable);
-            dbg_printf("drawing!\n");
             drawable->draw(drawable->self);
         }
     }
