@@ -15,6 +15,7 @@
 #include "types/AABB.h"
 #include "character.h"
 #include "util/error.h"
+#include "util/macros.h"
 #include "gfx/gfx.h"
 
 /* Function declarations */
@@ -71,16 +72,7 @@ bool step() {
 void begin() {
     chr_setcharacter_oiram(&p1);
 
-    for (u8 i = 0; i < sizeof(idrawables) / sizeof(IDrawable*); i++) {
-        if (NULL == idrawables[i]) {
-            dbg_printf("begin() %i is %p\n", i, idrawables[i]);
-            dbg_printf("set %i\n", i);
-            idrawables[i] = &p1.to_IDrawable;
-            dbg_printf("begin() %i is %p\n", i, idrawables[i]);
-            dbg_printf("begin() 1 is %p\n", idrawables[1]);
-            return;
-        }
-    }
+    util_insertfirst(idrawables, sizeof(idrawables) / sizeof(IDrawable*), &p1.to_IDrawable);
 
     dbg_printf("In begin():\n  every IDrawable in idrawables used\n");
     err_fatalcrash(); /* you should not reach here */
