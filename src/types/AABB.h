@@ -24,7 +24,7 @@ typedef struct AABB {
 } AABB;
 
 bool AABB_is_colliding(AABB*, AABB*);
-bool AABB_is_inside(vec2* point, AABB* box);
+bool AABB_is_inside(vec2 point, AABB* box);
 
 
 #ifdef __cplusplus
