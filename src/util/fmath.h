@@ -1,13 +1,13 @@
 /**
- * Filename: fmath.h
+ * Filename: util/fmath.h
  * 
  * Description: some math functions
  * 
  * Copyright (c) Gavin Tantleff 2022. All Rights Reserved.
  */
 
-#ifndef FMATH_H
-#define FMATH_H
+#ifndef UITL_FMATH_H
+#define UITL_FMATH_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -15,8 +15,10 @@ extern "C" {
 
 
 
+
+
 #ifdef __cplusplus
 }
 #endif /* __cplusplus */
 
-#endif /* FMATH_H */
+#endif /* UTIL_FMATH_H */

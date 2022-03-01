@@ -1,5 +1,5 @@
 /**
- * Filename: error.c
+ * Filename: util/error.c
  * 
  * Description: functions to call when errors happen
  * 

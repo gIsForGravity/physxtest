@@ -72,7 +72,7 @@ bool step() {
 void begin() {
     chr_setcharacter_oiram(&p1);
 
-    util_insertfirst(idrawables, sizeof(idrawables) / sizeof(IDrawable*), &p1.to_IDrawable);
+    util_insertelement(idrawables, sizeof(idrawables) / sizeof(IDrawable*), &p1.to_IDrawable);
 
     dbg_printf("In begin():\n  every IDrawable in idrawables used\n");
     err_fatalcrash(); /* you should not reach here */
