@@ -18,6 +18,9 @@ bool AABB_is_colliding(AABB* one, AABB* two) {
         && two->pos.y < pos2y(one);
 };
 
-bool AABB_is_inside(AABB* box, vec2* point) {
-
+bool AABB_is_inside(vec2* point, AABB* box) {
+    return point->x > box->pos.x
+        && point->x < pos2x(box)
+        && point->y > box->pos.y
+        && point->y < pos2y(box);
 };
