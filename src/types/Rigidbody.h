@@ -16,10 +16,12 @@
 extern "C" {
 #endif /* __cplusplus */
 
+
 typedef struct Rigidbody {
     vec2 pos;
     vec2 vel;
 } Rigidbody;
+
 
 #ifdef __cplusplus
 }
