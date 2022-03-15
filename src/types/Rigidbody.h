@@ -11,6 +11,8 @@
 
 #include "basetypes.h"
 #include "vec2.h"
+#include "Collider.h"
+#include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -18,8 +20,11 @@ extern "C" {
 
 
 typedef struct Rigidbody {
-    vec2 pos;
+    Collider collider;
     vec2 vel;
+    f32 mass;
+    f32 inverse_mass;
+    f32 gravity_force;
 } Rigidbody;
 
 
