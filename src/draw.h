@@ -12,14 +12,13 @@
 /* Includes */
 #include <graphx.h>
 #include "types/vec2.h"
+#include "scene.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif /* __cplusplus */
 
-void drw_DrawRLETCamera(const gfx_rletsprite_t* sprite, vec2 pos);
-vec2 drw_GetCameraPos(void);
-void drw_SetCameraPos(vec2 pos);
+void drw_DrawRLETCamera(const scene_t* scene, const gfx_rletsprite_t* sprite, vec2 pos);
 
 #ifdef __cplusplus
 }

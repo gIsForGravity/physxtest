@@ -12,6 +12,7 @@
 /* Includes */
 #include <graphx.h>
 #include "types/basetypes.h"
+#include "types/vec2.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -19,6 +20,7 @@ extern "C" {
 
 
 typedef struct scene {
+    vec2 camera_pos;
     u8 bg_color;
 } scene_t;
 
